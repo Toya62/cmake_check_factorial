@@ -12,7 +12,7 @@ build-project:
 test-project:
   stage: test
   script:
-    - mkdir Step7_build
-    - cd Step7_build
+    - mkdir build
+    - cd build
     - cmake .. && cmake --build . && make
     - ctest -VV
