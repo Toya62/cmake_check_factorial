@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "factorial.h"
+#include "factorial.cpp"
 
 TEST(FactorialTest, ShortTimeExecution) {
   EXPECT_EQ(factorial(0), 1);
