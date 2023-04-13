@@ -17,4 +17,5 @@ build:
 test:
   stage: test
   script:
-    - ctest --output-on-failure
+    - ctest
+    - ./test_factorial
