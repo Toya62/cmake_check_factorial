@@ -1,18 +1,20 @@
-stages :
+image: cmake:latest
+
+stages:
   - build
   - test
 
-build-project:
-  stage : build
-  script:
-    - mkdir build
-    - cd build
-    - cmake .. && cmake --build . && make
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
 
-test-project:
+build:
+  stage: build
+  script:
+    - make
+
+test:
   stage: test
   script:
-    - mkdir build
-    - cd build
-    - cmake .. && cmake --build . && make
-    - ctest -VV
+    - ctest --output-on-failure
